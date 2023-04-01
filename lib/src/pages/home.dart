@@ -24,7 +24,10 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             leading: IconButton(
-                onPressed: () => {FirebaseAuth.instance.signOut()},
+                onPressed: () => {
+                      FirebaseAuth.instance.signOut(),
+                      Navigator.popAndPushNamed(context, '/login')
+                    },
                 icon: const Icon(Icons.logout)),
             title: Text('Good Afternoon, $username!'),
             actions: [
