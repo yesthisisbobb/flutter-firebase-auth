@@ -26,7 +26,14 @@ class Accolus extends StatelessWidget {
                   Navigator.pushReplacementNamed(context, '/');
                 }),
               ],
-            )
+            ),
+        '/email-link-sign-in': (context) => EmailLinkSignInScreen(
+              actions: [
+                AuthStateChangeAction<SignedIn>((context, state) {
+                  Navigator.pushReplacementNamed(context, '/home');
+                }),
+              ],
+            ),
       },
     );
   }

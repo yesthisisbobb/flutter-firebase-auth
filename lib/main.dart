@@ -16,6 +16,14 @@ void main() async {
     GoogleProvider(
         clientId:
             '755606276866-3nd0gqug7s53niflbgtrvs4gscl56b72.apps.googleusercontent.com'),
+    EmailLinkAuthProvider(
+      actionCodeSettings: ActionCodeSettings(
+        url: 'https://<your-project-id>.page.link',
+        handleCodeInApp: true,
+        androidMinimumVersion: '19',
+        androidPackageName: 'com.example.flutter_firebase_auth',
+      ),
+    ),
   ]);
 
   runApp(const Accolus());

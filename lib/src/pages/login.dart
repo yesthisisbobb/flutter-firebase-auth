@@ -32,6 +32,9 @@ Widget loginWidgets(BuildContext context) {
             }
           },
         ),
+        EmailLinkSignInAction((context) {
+          Navigator.pushReplacementNamed(context, '/email-link-sign-in');
+        })
       ],
     ),
   );
