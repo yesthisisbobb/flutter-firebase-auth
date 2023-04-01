@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
             leading: IconButton(
                 onPressed: () => {
                       FirebaseAuth.instance.signOut(),
-                      Navigator.popAndPushNamed(context, '/login')
+                      Navigator.pushReplacementNamed(context, '/login')
                     },
                 icon: const Icon(Icons.logout)),
             title: Text('Good Afternoon, $username!'),

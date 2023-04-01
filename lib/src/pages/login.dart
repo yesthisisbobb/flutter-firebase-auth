@@ -24,7 +24,7 @@ Widget loginWidgets(BuildContext context) {
     body: SignInScreen(
       actions: [
         AuthStateChangeAction<SignedIn>((context, state) {
-          Navigator.pushReplacementNamed(context, '/home');
+          Navigator.pushNamed(context, '/home');
         }),
       ],
     ),
