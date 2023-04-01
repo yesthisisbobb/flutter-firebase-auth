@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/pages/home.dart';
 import 'package:flutter_firebase_auth/src/pages/login.dart';
@@ -14,6 +16,17 @@ class Accolus extends StatelessWidget {
         '/': (context) => const LoginPage(),
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
+        '/verify-email': (context) => EmailVerificationScreen(
+              actions: [
+                EmailVerifiedAction(() {
+                  Navigator.pushReplacementNamed(context, '/home');
+                }),
+                AuthCancelledAction((context) {
+                  FirebaseUIAuth.signOut(context: context);
+                  Navigator.pushReplacementNamed(context, '/');
+                }),
+              ],
+            )
       },
     );
   }

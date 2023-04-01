@@ -23,9 +23,15 @@ Widget loginWidgets(BuildContext context) {
   return Scaffold(
     body: SignInScreen(
       actions: [
-        AuthStateChangeAction<SignedIn>((context, state) {
-          Navigator.pushNamed(context, '/home');
-        }),
+        AuthStateChangeAction<SignedIn>(
+          (context, state) {
+            if (!state.user!.emailVerified) {
+              Navigator.pushNamed(context, '/verify-email');
+            } else {
+              Navigator.pushNamed(context, '/home');
+            }
+          },
+        ),
       ],
     ),
   );
