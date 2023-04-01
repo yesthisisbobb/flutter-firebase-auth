@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_auth/src/pages/home.dart';
 import 'package:flutter_firebase_auth/src/pages/login.dart';
 
 class Accolus extends StatelessWidget {
@@ -10,9 +11,9 @@ class Accolus extends StatelessWidget {
       theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => LoginPage(),
-        '/login': (context) => LoginPage(),
-        '/home': (context) => LoginPage(),
+        '/': (context) => const LoginPage(),
+        '/login': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
       },
     );
   }
